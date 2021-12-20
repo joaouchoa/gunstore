@@ -5,34 +5,35 @@ namespace gunstore.Repository
 {
     public class GunRepository : IRepository<Gun>
     {
+        private List<Gun> gunList = new List<Gun>();
         public void Delete(int id, Gun entity)
         {
-            throw new NotImplementedException();
+            gunList[id].Delete();
         }
 
-        public Gun GetById()
+        public Gun GetById(int id)
         {
-            throw new NotImplementedException();
+            return gunList[id];
         }
 
         public List<Gun> List()
         {
-            throw new NotImplementedException();
+            return gunList;
         }
 
         public int NextId()
         {
-            throw new NotImplementedException();
+            return gunList.Count;
         }
 
-        public void Put(Gun entity)
+        public void Create(Gun entity)
         {
-            throw new NotImplementedException();
+            gunList.Add(entity);
         }
 
         public void Put(int id, Gun entity)
         {
-            throw new NotImplementedException();
+            gunList[id]=entity;
         }
     }
 }

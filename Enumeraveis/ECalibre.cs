@@ -1,4 +1,4 @@
-namespace gunstore.Enum
+namespace gunstore.Enumeraveis
 {
     public enum ECalibre
     {

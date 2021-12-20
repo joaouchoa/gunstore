@@ -1,4 +1,4 @@
-using gunstore.Enum;
+using gunstore.Enumeraveis;
 
 namespace gunstore.Classes
 {
@@ -18,6 +18,7 @@ namespace gunstore.Classes
             Modelo = modelo;
             NumeroDeSerie = numeroDeSerie;
             Fabricante = fabricante;
+            this.Active = false;
         }
 
         public override string ToString()

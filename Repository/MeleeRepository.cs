@@ -5,34 +5,35 @@ namespace gunstore.Repository
 {
     public class MeleeRepository : IRepository<Melee>
     {
+        private List<Melee> meleeList = new List<Melee>();
         public void Delete(int id, Melee entity)
         {
-            throw new NotImplementedException();
+            meleeList[id].Delete();
         }
 
-        public Melee GetById()
+        public Melee GetById(int id)
         {
-            throw new NotImplementedException();
+            return meleeList[id];
         }
 
         public List<Melee> List()
         {
-            throw new NotImplementedException();
+            return meleeList;
         }
 
         public int NextId()
         {
-            throw new NotImplementedException();
+            return meleeList.Count;
         }
 
-        public void Put(Melee entity)
+        public void Create(Melee entity)
         {
-            throw new NotImplementedException();
+            meleeList.Add(entity);
         }
 
         public void Put(int id, Melee entity)
         {
-            throw new NotImplementedException();
+            meleeList[id] = entity;
         }
     }
 }
