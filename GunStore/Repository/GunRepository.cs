@@ -38,7 +38,23 @@ namespace GunStore.Repository
 
         public void Put(int id, Gun entity)
         {
-            gunList[id] = entity;
+            var x = 1;
+            foreach (var gun in gunList)
+            {
+                if (gun.id == id )
+                {
+                    gunList[id] = entity;
+                    x = 0;
+                }
+            }
+
+            if (x == 0)
+                Console.WriteLine("Arma Atualizada");
+            else
+                Console.WriteLine("Essa arma ~que deseja atualizar não existe");
+            
+            
+            
         }
     }
 }
