@@ -30,6 +30,7 @@ namespace GunStore
                         DeleteGun();
                         break;
                     case "5":
+                        GunListById();
                         break;
                     case "c":
                         Console.Clear();
@@ -110,10 +111,35 @@ namespace GunStore
 
         public static void DeleteGun() 
         {
-            Console.WriteLine("Digite o Id que você quer atualizar: ");
+            Console.WriteLine("Digite o Id que você quer deletar: ");
             int ident = int.Parse(Console.ReadLine());
 
             repository.Delete(ident);
+        }
+
+        private static void GunListById() 
+        {
+            Console.WriteLine("Digite o Id que você quer deletar: ");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Listing Gun By Id");
+            var list = repository.List();
+
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Nenhuma arma Cadastrada");
+            }
+            else
+            {
+                foreach (var gun in list)
+                {
+                    if (gun.id == id && gun.Active == true) 
+                    {
+                        Console.WriteLine(gun.ToString());
+                    }
+                }
+            }
+
         }
         private static void GunList()
         {
@@ -129,7 +155,10 @@ namespace GunStore
             {
                 foreach (var gun in list)
                 {
-                    Console.WriteLine("#ID {0}; - {1}", gun.retornaId(), gun.retornaModelo());
+                    if (gun.Active == true)
+                    {
+                        Console.WriteLine("#ID {0}; - {1}", gun.retornaId(), gun.retornaModelo());
+                    }
                 }
             }
 

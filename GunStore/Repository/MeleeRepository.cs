@@ -37,5 +37,10 @@ namespace GunStore.Repository
         {
             meleeList[id] = entity;
         }
+
+        public void Delete(int id)
+        {
+            meleeList[id].Delete();
+        }
     }
 }

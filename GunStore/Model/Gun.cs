@@ -23,7 +23,7 @@ namespace GunStore.Model
             Modelo = modelo;
             NumeroDeSerie = numeroDeSerie;
             Fabricante = fabricante;
-            this.Active = false;
+            this.Active = true;
         }
 
         public override string ToString()
@@ -34,7 +34,7 @@ namespace GunStore.Model
             retorno += "Capacidade: " + this.Capacidade + Environment.NewLine;
             retorno += "Fabricante: " + this.Fabricante + Environment.NewLine;
             retorno += "Numero de Série: " + this.NumeroDeSerie + Environment.NewLine;
-            retorno += "Excluido: " + this.Active + Environment.NewLine;
+            retorno += "Ativo: " + this.Active + Environment.NewLine;
 
             return retorno;
         }
